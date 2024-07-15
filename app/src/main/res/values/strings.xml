@@ -8,4 +8,7 @@
     <string name="editTextHint">Write your answer here</string>
     <string name="next">Next</string>
     <string name="emptyInput">Please, enter an answer or click next button</string>
+    <string name="gameOver">Game over!</string>
+    <string name="playAgain">Play again</string>
+    <string name="exit">Exit</string>
 </resources>
