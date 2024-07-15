@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MathGame</string>
+    <string name="addition">Додавання</string>
+    <string name="substraction">Віднімання</string>
+    <string name="multiplication">Множення</string>
+    <string name="score">Рахунок</string>
+    <string name="life">Житті</string>
+    <string name="editTextHint">Введіть вашу відповідь тут</string>
+    <string name="next">Наступне</string>
+    <string name="emptyInput">Будь ласка, введіть відповідь, або перейдіть на наступне питання</string>
+</resources>

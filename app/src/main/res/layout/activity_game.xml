@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="10dp"
+    android:background="@drawable/addbg"
+    android:orientation="vertical"
+    tools:context=".GameActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:paddingTop="50dp">
+
+        <TextView
+            android:id="@+id/scoreLabel"
+            android:layout_width="58dp"
+            android:layout_height="wrap_content"
+            android:text="@string/score"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="33dp"
+            tools:layout_editor_absoluteY="16dp"
+            tools:text="@string/score" />
+
+        <TextView
+            android:id="@+id/currentScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="0"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/lifeLabel"
+            android:layout_width="59dp"
+            android:layout_height="wrap_content"
+            android:text="@string/life"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="143dp"
+            tools:layout_editor_absoluteY="18dp" />
+
+        <TextView
+            android:id="@+id/currentLife"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="3"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/timeLabel"
+            android:layout_width="53dp"
+            android:layout_height="wrap_content"
+            android:text="Time"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="292dp"
+            tools:layout_editor_absoluteY="18dp" />
+
+        <TextView
+            android:id="@+id/timeCurent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="60"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/questionText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textSize="34sp" />
+
+    <EditText
+        android:id="@+id/answerEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:backgroundTint="#2196F3"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/editTextHint"
+        android:inputType="text"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/okButton"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Ok"
+            tools:layout_editor_absoluteX="236dp"
+            tools:layout_editor_absoluteY="258dp" />
+
+        <Button
+            android:id="@+id/nextButton"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="@string/next"
+            tools:layout_editor_absoluteX="58dp"
+            tools:layout_editor_absoluteY="253dp" />
+    </LinearLayout>
+
+</LinearLayout>
