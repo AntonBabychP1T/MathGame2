@@ -1,5 +1,6 @@
 package com.example.mathgamenew
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.widget.Button
@@ -67,15 +68,18 @@ class GameActivity : AppCompatActivity() {
                     Toast.LENGTH_LONG
                 ).show()
             } else {
-                pauseTimer()
+
                 if (inputText.toInt() == correctAnswer) {
                     userScore += 10
                     textQuestion.text = "Correct"
                     textScore.text = userScore.toString()
+                    buttonOk.isEnabled = false
+                    pauseTimer()
                 } else {
                     userLife--
                     textQuestion.text = "Wrong"
                     textLife.text = userLife.toString()
+                    checkGameOver()
                 }
             }
         }
@@ -83,9 +87,18 @@ class GameActivity : AppCompatActivity() {
         buttonNext.setOnClickListener {
             pauseTimer()
             resetTimes()
-            gameContinue()
-            editTextAnswer.setText("")
 
+            editTextAnswer.setText("")
+            buttonOk.isEnabled = true
+            if (userLife == 0) {
+                Toast.makeText(applicationContext, "Game over", Toast.LENGTH_LONG).show()
+                val intent = Intent(this@GameActivity, ResultActivity::class.java)
+                intent.putExtra("score",userScore)
+                startActivity(intent)
+                finish()
+            } else {
+                gameContinue()
+            }
         }
     }
 
@@ -112,6 +125,7 @@ class GameActivity : AppCompatActivity() {
                 userLife--
                 textLife.text = userLife.toString()
                 textQuestion.text = "Time is out"
+                checkGameOver()
 
             }
 
@@ -129,5 +143,15 @@ class GameActivity : AppCompatActivity() {
 
     private fun updateText() {
         textTime.text = String.format(Locale.getDefault(),"%02d", timeLeftInMillis / 1000)
+    }
+
+    private fun checkGameOver() {
+        if (userLife <= 0) {
+            Toast.makeText(applicationContext, "Game over", Toast.LENGTH_LONG).show()
+            val intent = Intent(this@GameActivity, ResultActivity::class.java)
+            intent.putExtra("score", userScore)
+            startActivity(intent)
+            finish()
+        }
     }
 }
