@@ -3,6 +3,8 @@ package com.example.mathgamenew
 import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.os.Handler
+import android.os.Looper
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -28,12 +30,14 @@ class GameActivity : AppCompatActivity() {
     lateinit var buttonNext: Button
 
     lateinit var timer : CountDownTimer
-    private val startTimeInMillis : Long = 60000
+    private val startTimeInMillis : Long = 30000
     private var timeLeftInMillis : Long = startTimeInMillis
 
-    var correctAnswer: Int = 0
-    var userScore: Int = 0
+    private var correctAnswer: Int = 0
+    private var userScore: Int = 0
     var userLife: Int = 3
+    private var number1 :Int = 0
+    private var number2 = 0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -79,6 +83,9 @@ class GameActivity : AppCompatActivity() {
                     userLife--
                     textQuestion.text = "Wrong"
                     textLife.text = userLife.toString()
+                    Handler(Looper.getMainLooper()).postDelayed({
+                        textQuestion.text = "$number1 + $number2"
+                    },1500)
                     checkGameOver()
                 }
             }
@@ -90,21 +97,15 @@ class GameActivity : AppCompatActivity() {
 
             editTextAnswer.setText("")
             buttonOk.isEnabled = true
-            if (userLife == 0) {
-                Toast.makeText(applicationContext, "Game over", Toast.LENGTH_LONG).show()
-                val intent = Intent(this@GameActivity, ResultActivity::class.java)
-                intent.putExtra("score",userScore)
-                startActivity(intent)
-                finish()
-            } else {
-                gameContinue()
-            }
+            checkGameOver()
+            gameContinue()
+
         }
     }
 
     fun gameContinue() {
-        val number1 = Random.nextInt(1, 100)
-        val number2 = Random.nextInt(1, 100)
+        number1 = Random.nextInt(1, 100)
+        number2 = Random.nextInt(1, 100)
         correctAnswer = number1 + number2
 
         textQuestion.text = "$number1 + $number2"

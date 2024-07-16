@@ -6,8 +6,6 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class ResultActivity : AppCompatActivity() {
     lateinit var result : TextView
@@ -22,8 +20,8 @@ class ResultActivity : AppCompatActivity() {
         result = findViewById(R.id.resultScoreText)
         playAgain = findViewById(R.id.buttonAgain)
         exit = findViewById(R.id.exitButton)
-        val score = intent.getBundleExtra("score")
-        result.text = "Your score: $score"
+        val score = intent.getIntExtra("score", 0)
+        result.text = "Your score: ${score}"
         playAgain.setOnClickListener {
             val intent = Intent(this@ResultActivity, MainActivity::class.java)
             startActivity(intent)

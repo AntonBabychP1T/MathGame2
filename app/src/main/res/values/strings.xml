@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">MathGame</string>
     <string name="addition">Addition</string>
-    <string name="substraction">Substraction</string>
+    <string name="substraction">Subtraction</string>
     <string name="multiplication">Multiplication</string>
     <string name="score">Score</string>
     <string name="life">Life</string>
@@ -11,4 +11,6 @@
     <string name="gameOver">Game over!</string>
     <string name="playAgain">Play again</string>
     <string name="exit">Exit</string>
+    <string name="time">Time</string>
+    <string name="ok">OK</string>
 </resources>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">MathGame</string>
+    <string name="app_name">МатиматОчка</string>
     <string name="addition">Додавання</string>
     <string name="substraction">Віднімання</string>
     <string name="multiplication">Множення</string>
@@ -9,4 +9,9 @@
     <string name="editTextHint">Введіть вашу відповідь тут</string>
     <string name="next">Наступне</string>
     <string name="emptyInput">Будь ласка, введіть відповідь, або перейдіть на наступне питання</string>
+    <string name="gameOver">Гру завершено</string>
+    <string name="playAgain">Зіграти знову</string>
+    <string name="exit">Вихід</string>
+    <string name="time">Час</string>
+    <string name="ok">Ок</string>
 </resources>
